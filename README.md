@@ -1,1 +1,1 @@
-# pancakemc-website
+# pancakemc website
