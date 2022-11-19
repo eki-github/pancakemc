@@ -1,10 +1,167 @@
-html, body{
-    display:flex;
-    margin:0;
-    padding:0;
+html,
+body {
+    font-family: 'Nunito',sans-serif;
+    background: #2c3e50;
+    height: auto;
+}
+.heading {
+  width: auto;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.title {
+  text-align: center;
+  font-size: 80px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+}
+.button {
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Nunito',sans-serif;
+    font-size: 22px;
+    text-transform: capitalize;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%,rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    margin-top: 200%;
+    margin-left: 500%;
+    display: block;
+    }
+  button::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  .button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+.menu{
+    position: relative;
+    width: 570px;
+    height: 50px;
+    background-color: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+}
+a{
+    line-height: 50px;
     height: 100%;
-    background: #444;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Courier New';
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+  }
+  a:nth-child(1){
+    width: 150px;
+  }
+  a:nth-child(2){
+    width: 90px;
+  }
+  a:nth-child(3){
+    width: 130px;
+  }
+  a:nth-child(4){
+    width: 100px;
+  }
+  a:nth-child(5){
+    width: 100px;
+  }
+  .start-home, a:nth-child(1):hover~.animation{
+    width: 150px;
+    left: 0;
+    background-color: #1abc9c;
+  }
+  .start-about, a:nth-child(2):hover~.animation{
+    width: 90px;
+    left: 150px;
+    background-color: #e74c3c;
+  }
+  .start-blog, a:nth-child(3):hover~.animation{
+    width: 130px;
+    left: 240px;
+    background-color: #3498db;
+  }
+  .start-portefolio, a:nth-child(4):hover~.animation{
+    width: 100px;
+    left: 370px;
+    background-color: #9b59b6;
+  }
+  .start-contact, a:nth-child(5):hover~.animation{
+    width: 100px;
+    left: 470px;
+    background-color: #e67e22;
   }
